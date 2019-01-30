@@ -1,0 +1,3 @@
+{
+	"shoot" : [{"transforms":{},"burstParticle":[],"animationState":{},"fireEvents":["beat"],"wait":0.025,"playSounds":[],"lights":{}},{"transforms":{"L_offset":{"position":[1.0625,0]},"R_arm1":{"rotation":-30},"R_arm2":{"rotation":43},"gun":{"rotation":4.8125,"position":[-12.8125,-2.4375]}},"burstParticle":[],"animationState":{},"fireEvents":[],"wait":0.05,"playSounds":[],"lights":{}},{"transforms":{},"burstParticle":[],"animationState":{},"fireEvents":[],"wait":0.1,"playSounds":[],"lights":{}}]
+}
