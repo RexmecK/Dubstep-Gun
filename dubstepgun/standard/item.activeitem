@@ -18,8 +18,8 @@
 	
 	"musicGun" : {
 		"muzzle" : {"part" : "speaker", "s" : "muzzle", "e" : "muzzle_e"},
-		"bpm" : 140,
-		"preFireTime" : 1
+		"bpm" : 138,
+		"preFireTime" : 1.739
 	},
 
 	"animationsKeyFrames" : "/dubstepgun/base/animation.keyframes",
@@ -41,8 +41,9 @@
 			"knob3" : "sprites/sprite_12.png"
 		},
 		"sounds" : {
-			"prefire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["/assetmissing.ogg"]},
-			"fireloop"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["/assetmissing.ogg"]}
+			"prefire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["prefire.wav"]},
+			"loopfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["loopfire.wav"]},
+			"endfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["endfire.wav"]}
 		}
 	}
 }
