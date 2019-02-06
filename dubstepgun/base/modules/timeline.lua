@@ -30,17 +30,28 @@ function timeline:play(name)
 	self._tracks[name].playedTime = os.clock
 end
 
+function timeline:stop(name)
+	self._tracks[name].playing = true
+	for i,v in pairs(self._tracks[name].playedkeys) do
+		self._tracks[name].keys[i] = v
+	end
+	self._tracks[name].playedkeys = {}
+end
+
 -- [{"events" : ["func1"], "time" : 2.0}]
 function timeline:add(name, a)
 	self._tracks[name] = {playing = false, playedTime = 0, keys = a, playedkeys = {}}
 end
+
 
 function timeline:addEvent(name, func)
 
 end
 
 function timeline:fireEvent(name)
-
+	if self._functions[name] then
+		self._function[name]()
+	end
 end
 
 addClass("timeline")
