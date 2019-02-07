@@ -46,9 +46,9 @@ function beatProjectiles:update(dt)
             table.insert(todraw, {position = v.lastlineb[1], line = {{0,0}, vec2.sub(v.lastlineb[2], v.lastlineb[1])}, width = 2, color = {0,128,255,255}, fullbright = true})
             table.insert(todraw, {position = v.lastlineb[2], line = {{0,0}, vec2.sub(entpos2b, v.lastlineb[2])}, width = 3, color = {255,255,255,255}, fullbright = true})
 
-            self:linetrail(v.lastlineb, 1, {160,126,255,255})
-            self:linetrail(v.lastline, 1, {160,126,255,255})
-            self:linetrail({v.lastpos, entpos}, 1, {160,126,255,255})
+            self:linetrail(v.lastlineb, 0.1, {160,126,255,255})
+            self:linetrail(v.lastline, 0.1, {160,126,255,255})
+            self:linetrail({v.lastpos, entpos}, 0.1, {160,126,255,255})
             self.projectiles[i] = {time = v.time + dt, lastline = {v.lastline[2], entpos2},lastlineb = {v.lastlineb[2], entpos2b}, lastpos = entpos}
         end
     end

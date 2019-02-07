@@ -1,0 +1,13 @@
+{
+  "name" : "dabdubstep",
+  "states" : ["idle", "run", "walk", "sit"],
+  "cycle" : 0.1,
+  "cyclic" : false,
+  "duration" : 2.0,
+  "steps" : [
+    // body, frontArm, backArm, headOffset, frontArmOffset, backArmOffset
+    [ null, "swim.1", "swim.1", [0, -1], [-1, 1], [0, 0] ],
+    [ null, "swim.2", "swim.2", [-1, -2], [-2, 2], [0, 0] ],
+    [ null, "swim.3", "swim.3", [-1, -3], [-3, 3], [0, 0] ]
+  ]
+}

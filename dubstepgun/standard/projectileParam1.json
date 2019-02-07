@@ -2,14 +2,14 @@
     "processing" : "?setcolor=fff",
     "speed": 200,
     "timeToLive" : 0.4,
-    "power": 1000000,
+    "power": 100,
     "damageType" : "IgnoresDef",
     "periodicActions" : [
         {
           "time" : 0.016,
           "repeat" : true,
           "action" : "loop",
-            "count" : 15,
+            "count" : 1,
             "body" : [
                  {
                      "action" : "particle",
@@ -40,7 +40,7 @@
           "time" : 0.016,
           "repeat" : true,
           "action" : "loop",
-            "count" : 15,
+            "count" : 1,
             "body" : [
                  {
                      "action" : "particle",
@@ -110,15 +110,8 @@
           }
         },
         {
-          "action" : "explosion",
-          "foregroundRadius" : 2,
-          "backgroundRadius" : 2,
-          "explosiveDamageAmount" : 100000,
-          "delaySteps" : 0
-        },
-        {
           "action" : "loop",
-            "count" : 50,
+            "count" : 5,
             "body" : [
                  {
                      "action" : "particle",
@@ -142,65 +135,53 @@
                              "initialVelocity" : [20, 20]
                          }
                      }
-                  }
-            ]
-        },
-        {
-          "action" : "loop",
-            "count" : 50,
-            "body" : [
-                 {
-                     "action" : "particle",
-                     "specification" : {
-                         "type" : "ember",
-                         "size" : 0.5,
-                         "color" : [255, 255, 255],
-                         "light" : [255, 255, 255],
-                         "fullbright" : true,
-                         "trail" : true,
-                         "initialVelocity" : [0, 0],
-                         "finalVelocity" : [0, 0],
-                         "destructionAction" : "shrink",
-                         "destructionTime" : 0.5,
-                         "approach" : [1, 1],
-                         "timeToLive" : 0.1,
-                         "layer" : "middle",
-                         "variance" : {
-                             "size" : 1.0,
-                             "timeToLive" : 0.7,
-                             "initialVelocity" : [20, 20]
-                         }
-                     }
-                  }
-            ]
-        },
-        {
-          "action" : "loop",
-            "count" : 50,
-            "body" : [
-                 {
-                     "action" : "particle",
-                     "specification" : {
-                         "type" : "ember",
-                         "size" : 0.5,
-                         "color" : [0, 128, 255, 255],
-                         "light" : [0, 128, 255, 255],
-                         "fullbright" : true,
-                         "trail" : true,
-                         "initialVelocity" : [0, 0],
-                         "finalVelocity" : [0, 0],
-                         "destructionAction" : "shrink",
-                         "destructionTime" : 0.1,
-                         "approach" : [1, 1],
-                         "timeToLive" : 0.1,
-                         "layer" : "middle",
-                         "variance" : {
-                             "size" : 4.0,
-                             "timeToLive" : 0.7,
-                             "initialVelocity" : [20, 20]
-                         }
-                     }
-                  }
+                  },
+                  {
+                      "action" : "particle",
+                      "specification" : {
+                          "type" : "ember",
+                          "size" : 0.5,
+                          "color" : [255, 255, 255],
+                          "light" : [255, 255, 255],
+                          "fullbright" : true,
+                          "trail" : true,
+                          "initialVelocity" : [0, 0],
+                          "finalVelocity" : [0, 0],
+                          "destructionAction" : "shrink",
+                          "destructionTime" : 0.5,
+                          "approach" : [1, 1],
+                          "timeToLive" : 0.1,
+                          "layer" : "middle",
+                          "variance" : {
+                              "size" : 1.0,
+                              "timeToLive" : 0.7,
+                              "initialVelocity" : [20, 20]
+                          }
+                      }
+                   },
+                   {
+                    "action" : "particle",
+                    "specification" : {
+                        "type" : "ember",
+                        "size" : 0.5,
+                        "color" : [0, 128, 255, 255],
+                        "light" : [0, 128, 255, 255],
+                        "fullbright" : true,
+                        "trail" : true,
+                        "initialVelocity" : [0, 0],
+                        "finalVelocity" : [0, 0],
+                        "destructionAction" : "shrink",
+                        "destructionTime" : 0.1,
+                        "approach" : [1, 1],
+                        "timeToLive" : 0.1,
+                        "layer" : "middle",
+                        "variance" : {
+                            "size" : 4.0,
+                            "timeToLive" : 0.7,
+                            "initialVelocity" : [20, 20]
+                        }
+                    }
+                 }
             ]
         },
         { 

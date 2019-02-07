@@ -19,7 +19,9 @@
 	"musicGun" : {
 		"muzzle" : {"part" : "speaker", "s" : "muzzle", "e" : "muzzle_e"},
 		"bpm" : 138,
-		"preFireTime" : 1.739
+		"preFireTime" : 1.739,
+		"loopTime" : 41.739,
+		"dancePools" : ["armswingdance", "wiggledance", "dabdubstep"]
 	},
 
 	"animationsKeyFrames" : "/dubstepgun/base/animation.keyframes",
@@ -28,6 +30,7 @@
 		"globalTagDefaults" : {
 			"speaker" : "sprites/sprite_00.png",
 			"gun" : "sprites/sprite_01.png",
+			"gunfullbright" : "sprites/sprite_01f.png",
 			"eq1" : "sprites/sprite_02.png",
 			"eq2" : "sprites/sprite_03.png",
 			"eq3" : "sprites/sprite_04.png",
@@ -43,7 +46,8 @@
 		"sounds" : {
 			"prefire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["prefire.wav"]},
 			"loopfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["loopfire.wav"]},
-			"endfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["endfire.wav"]}
+			"endfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["endfire.wav"]},
+			"idle"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["idle.wav"]}
 		}
 	}
 }

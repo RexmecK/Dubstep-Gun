@@ -1,0 +1,56 @@
+[
+	//second growl
+	{"events" : ["beatFire"], "time" : 0.870},
+	{"events" : ["beatFire"], "time" : 1.087},
+	{"events" : ["beatFire"], "time" : 1.304},
+	{"events" : ["beatFire"], "time" : 1.522},
+
+
+	//bassreject wobble sound thing
+	{"events" : ["beatFire"], "time" : 1.848},
+	{"events" : ["beatFire"], "time" : 1.984},
+	{"events" : ["beatFire"], "time" : 2.120},
+	{"events" : ["beatFire"], "time" : 2.255},
+	{"events" : ["beatFire"], "time" : 2.391},
+
+	//NI massive modern talking wobble part
+	{"events" : ["beatFire"], "time" : 3.696},
+	{"events" : ["beatFire"], "time" : 3.804},
+	{"events" : ["beatFire"], "time" : 3.913},
+	{"events" : ["beatFire"], "time" : 4.022},
+	{"events" : ["beatFire"], "time" : 4.130},
+	{"events" : ["beatFire"], "time" : 4.239},
+	{"events" : ["beatFire"], "time" : 4.239},
+
+	//sample hold thing part
+	{"events" : ["beatFire"], "time" : 4.565},
+	{"events" : ["beatFire"], "time" : 4.783},
+
+	{"events" : ["beatFire"], "time" : 8.043},
+	{"events" : ["beatFire"], "time" : 8.261},
+	{"events" : ["beatFire"], "time" : 8.478},
+	
+	{"events" : ["beatFire"], "time" : 8.804},
+	{"events" : ["beatFire"], "time" : 8.913},
+	{"events" : ["beatFire"], "time" : 9.076},
+	{"events" : ["beatFire"], "time" : 9.212},
+	{"events" : ["beatFire"], "time" : 9.348},
+	{"events" : ["beatFire"], "time" : 9.457},
+
+	{"events" : ["beatFire"], "time" : 15},
+	{"events" : ["beatFire"], "time" : 15.217},
+	{"events" : ["beatFire"], "time" : 15.435},
+
+	{"events" : ["beatFire"], "time" : 16.087},
+
+	{"events" : ["beatFire"], "time" : 17.826},
+
+	{"events" : ["beatFire"], "time" : 18.478},
+	{"events" : ["beatFire"], "time" : 18.696},
+
+	{"events" : ["beatFire"], "time" : 21.957},
+	{"events" : ["beatFire"], "time" : 22.174},
+	{"events" : ["beatFire"], "time" : 22.391},
+
+	{"events" : ["beatFire"], "time" : 23.043}
+]

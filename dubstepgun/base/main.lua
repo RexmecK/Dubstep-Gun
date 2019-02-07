@@ -2,6 +2,8 @@ main = {
     state = "idle",
     timer1 = 0,
     beattimer1 = 0,
+    beatSync = true,
+
     cameracooldown = 0,
 }
 
@@ -11,37 +13,57 @@ end
 
 function main:init()
     self.config = config.getParameter("musicGun")
+    npcDancer.dancePools = self.config.dancePools or {}
     self.beattimer = os.clock()
-    camera.smooth = 16
+    camera.smooth = 8
+    timeline:add("beatEvents", root.assetJson(pD("beatEvents.timeline")))
+    timeline:setEvent("beatSync_on", function() self.beatSync = true end)
+    timeline:setEvent("beatSync_off", function() self.beatSync = false end)
+    timeline:setEvent("beatFire", function() self:fire() end)
+    animator.stopAllSounds("idle")
+    animator.playSound("idle", -1)
 end
+
 
 function main:update(dt, firemode, shift)
     local osclocked = os.clock() 
     if firemode == "primary" then
+
         if self.state == "idle" then
+            animator.stopAllSounds("idle")
             animator.playSound("prefire")
             self.state = "prefire"
             self.timer1 = osclocked + self.config.preFireTime
         elseif self.state == "prefire" then
             if self.timer1 <= osclocked then
+                animator.stopAllSounds("loopfire")
                 animator.playSound("loopfire", -1)
+                timeline:play("beatEvents")
                 self.state = "loopfire"
                 self.beattimer1 = osclocked
+                self.timer1 = osclocked + self.config.loopTime
+                npcDancer:start() 
             end
         elseif self.state == "loopfire" then
+
+            if self.timer1 <= osclocked then
+                animator.stopAllSounds("loopfire")
+                animator.playSound("loopfire", -1) --copied code wtf
+                timeline:play("beatEvents")
+                self.beattimer1 = osclocked
+                self.timer1 = osclocked + self.config.loopTime
+            end
+
             if self.beattimer1 <= osclocked then
                 local offset = self.beattimer1 - osclocked -- this is to let us to we are a little late
                 self.beattimer1 = (osclocked + beatsec(self.config.bpm)) + offset
-                self.cameracooldown = beatsec(self.config.bpm * 2)
-                self:fire()
+                if self.beatSync then
+                    self:fire()
+                end
             end
+
         end
-        if self.cameracooldown == 0 then
-            camera.target = vec2.mul(vec2.sub(activeItem.ownerAimPosition(), mcontroller.position()), 0.5)
-        else
-            self.cameracooldown = math.max(self.cameracooldown - dt, 0)
-            camera.target = vec2.add(vec2.mul(vec2.sub(activeItem.ownerAimPosition(), mcontroller.position()), 0.5), {((math.random(0,100) / 100) * 10) - 5,((math.random(0,100) / 100) * 10) - 5})
-        end
+
     elseif firemode ~= "primary" and self.state ~= "idle" then
         if self.state ~= "prefire" then
             animator.stopAllSounds("loopfire")
@@ -49,12 +71,25 @@ function main:update(dt, firemode, shift)
         else
             animator.stopAllSounds("prefire")
         end
+        timeline:stop("beatEvents")
+        npcDancer:stop() 
+        animator.playSound("idle", -1)
 
         self.state = "idle"
         self.beattimer1 = 0
         self.timer1 = 0
         camera.target = {0,0}
     end
+    
+    if self.state ~= "idle" and self.cameracooldown == 0 then
+        camera.target = vec2.mul(vec2.sub(activeItem.ownerAimPosition(), mcontroller.position()), 0.125)
+    elseif self.cameracooldown > 0 then
+        self.cameracooldown = math.max(self.cameracooldown - dt, 0)
+        camera.target = vec2.add(vec2.mul(vec2.sub(activeItem.ownerAimPosition(), mcontroller.position()), 0.125), {0,math.sin(os.clock() * 100   )*self.cameracooldown * 10})
+    else
+        camera.target = {0,0}
+    end
+
     world.debugText("beattimer = %s", (self.beattimer1) - osclocked, vec2.add(mcontroller.position(), {0,1}), "#ff0")
     world.debugText("timer1 = %s", self.timer1, vec2.add(mcontroller.position(), {0,2}), "#ff0")
     self:updateAim()
@@ -64,6 +99,8 @@ function main:fire()
     animation:play("shoot")
     local pos = vec2.add(mcontroller.position(), activeItem.handPosition(animator.partPoint(self.config.muzzle.part, self.config.muzzle.s)))
     local pos2 = vec2.add(mcontroller.position(), activeItem.handPosition(animator.partPoint(self.config.muzzle.part, self.config.muzzle.e)))
+
+    self.cameracooldown = 0.3
 
     local projectileid = world.spawnProjectile("bullet-4", pos, activeItem.ownerEntityId(), vec2.sub(pos2, pos), false, root.assetJson(pD("projectileParam1.json")))
     beatProjectiles:add(projectileid)
@@ -83,6 +120,11 @@ end
 
 
 function main:uninit()
+    animator.stopAllSounds("loopfire")
+    animator.stopAllSounds("loopfire")
+    animator.stopAllSounds("loopfire")
+    animator.stopAllSounds("loopfire")
+    npcDancer:stop() 
 
 end
 

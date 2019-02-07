@@ -39,9 +39,20 @@
 				}
 			},
 
-			"eq1" : {
+			"gunfullbright" : {
 				"properties" : {
 					"zLevel" : 21,
+					"centered" : false,
+					"fullbright" : true,
+					"image" : "<gunfullbright>",
+					"offset" : [0.0, 0.0],
+					"transformationGroups" : ["gun", "base"]
+				}
+			},
+
+			"eq1" : {
+				"properties" : {
+					"zLevel" : 22,
 					"centered" : false,
 					"fullbright" : true,
 					"image" : "<eq1>",
@@ -52,7 +63,7 @@
 
 			"eq2" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
 					"fullbright" : true,
 					"image" : "<eq2>",
@@ -63,7 +74,7 @@
 
 			"eq3" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
 					"fullbright" : true,
 					"image" : "<eq3>",
@@ -74,7 +85,7 @@
 
 			"eq4" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
 					"image" : "<eq4>",
 					"offset" : [0.0, 0.0],
@@ -84,7 +95,7 @@
 
 			"eq5" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
 					"image" : "<eq5>",
 					"offset" : [0.0, 0.0],
@@ -94,7 +105,7 @@
 
 			"eq6" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
 					"image" : "<eq6>",
 					"offset" : [0.0, 0.0],
@@ -104,7 +115,7 @@
 
 			"eq7" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
 					"image" : "<eq7>",
 					"offset" : [0.0, 0.0],
@@ -114,7 +125,7 @@
 
 			"vu" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
 					"image" : "<vu>",
 					"offset" : [0.0, 0.0],
@@ -124,8 +135,9 @@
 
 			"knob1" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
+					"fullbright" : true,
 					"image" : "<knob1>",
 					"offset" : [0.0, 0.0],
 					"transformationGroups" : ["knob1","gun", "base"]
@@ -134,8 +146,9 @@
 
 			"knob2" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
+					"fullbright" : true,
 					"image" : "<knob2>",
 					"offset" : [0.0, 0.0],
 					"transformationGroups" : ["knob2","gun", "base"]
@@ -144,8 +157,9 @@
 
 			"knob3" : {
 				"properties" : {
-					"zLevel" : 21,
+					"zLevel" : 22,
 					"centered" : false,
+					"fullbright" : true,
 					"image" : "<knob3>",
 					"offset" : [0.0, 0.0],
 					"transformationGroups" : ["knob3","gun", "base"]
@@ -225,5 +239,5 @@
 		"loopfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["/assetmissing.ogg"]},
 		"endfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["/assetmissing.ogg"]}
 	},
-	"transformationGroups" : {"vu":{"interpolated":false,"transform":{"rotationPoint":[10.3125,6.375],"rotation":90}},"arms_global":{"ignore":true,"interpolated":false,"transform":{}},"speaker":{"interpolated":false,"transform":{"position":[0,0]}},"base":{"interpolated":false,"transform":{}},"eq1":{"interpolated":false,"transform":{"scalePoint":[1.25,5.875],"scale":[1,0]}},"knob1":{"interpolated":false,"transform":{"rotationPoint":[14.0625,9.0625],"rotation":0}},"knob2":{"interpolated":false,"transform":{"rotationPoint":[15.6875,9.0625],"rotation":0}},"eq2":{"interpolated":false,"transform":{"scalePoint":[1.625,5.875],"scale":[1,0]}},"eq3":{"interpolated":false,"transform":{"scalePoint":[2,5.875],"scale":[1,0]}},"knob3":{"interpolated":false,"transform":{"rotationPoint":[17.4375,9.0625],"rotation":0}},"eq4":{"interpolated":false,"transform":{}},"gun":{"interpolated":false,"transform":{"rotationPoint":[9.875,2.9375],"scale":[0.1875,0.1875],"position":[-11.0625,-1.8125]}},"eq5":{"interpolated":false,"transform":{}},"eq6":{"interpolated":false,"transform":{}},"eq7":{"interpolated":false,"transform":{}},"L_offset":{"ignore":true,"interpolated":false,"transform":{"curve":1,"position":[1.3125,-0.0625]}},"R_hand":{"ignore":true,"interpolated":false,"transform":{}},"L_hand":{"ignore":true,"interpolated":false,"transform":{}},"R_offset":{"ignore":true,"interpolated":false,"transform":{}},"R_arm1":{"ignore":true,"interpolated":false,"transform":{}},"R_arm2":{"ignore":true,"interpolated":false,"transform":{}},"L_arm1":{"ignore":true,"interpolated":false,"transform":{}},"L_arm2":{"ignore":true,"interpolated":false,"transform":{}}}
+	"transformationGroups" : {"vu":{"interpolated":false,"transform":{"rotationPoint":[10.3125,6.375],"rotation":90}},"arms_global":{"ignore":true,"interpolated":false,"transform":{}},"speaker":{"interpolated":false,"transform":{"position":[0,0]}},"base":{"interpolated":false,"transform":{}},"eq1":{"interpolated":false,"transform":{"scalePoint":[1.25,5.875],"scale":[1,13]}},"knob1":{"interpolated":false,"transform":{"rotationPoint":[14.0625,9.0625],"rotation":0}},"knob2":{"interpolated":false,"transform":{"rotationPoint":[15.6875,9.0625],"rotation":0}},"eq2":{"interpolated":false,"transform":{"scalePoint":[1.625,5.875],"scale":[1,13]}},"eq3":{"interpolated":false,"transform":{"scalePoint":[2,5.875],"scale":[1,13]}},"knob3":{"interpolated":false,"transform":{"rotationPoint":[17.4375,9.0625],"rotation":0}},"eq4":{"interpolated":false,"transform":{}},"gun":{"interpolated":false,"transform":{"rotationPoint":[9.875,2.9375],"scale":[0.1875,0.1875],"position":[-11.0625,-1.8125]}},"eq5":{"interpolated":false,"transform":{}},"eq6":{"interpolated":false,"transform":{}},"eq7":{"interpolated":false,"transform":{}},"L_offset":{"ignore":true,"interpolated":false,"transform":{"curve":1,"position":[1.3125,-0.0625]}},"R_hand":{"ignore":true,"interpolated":false,"transform":{}},"L_hand":{"ignore":true,"interpolated":false,"transform":{}},"R_offset":{"ignore":true,"interpolated":false,"transform":{}},"R_arm1":{"ignore":true,"interpolated":false,"transform":{}},"R_arm2":{"ignore":true,"interpolated":false,"transform":{}},"L_arm1":{"ignore":true,"interpolated":false,"transform":{}},"L_arm2":{"ignore":true,"interpolated":false,"transform":{}}}
 }

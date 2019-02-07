@@ -1,0 +1,8 @@
+{
+  "type" : "dubstepgunnpcdancer",
+
+  "scripts" : [
+    "/dubstepgun/stagehands/dubstepgunnpcdancer.lua"
+  ],
+  "scriptDelta" : 60
+}
