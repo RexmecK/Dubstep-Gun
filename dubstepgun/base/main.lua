@@ -12,6 +12,7 @@ function beatsec(bpm)
 end
 
 function main:init()
+    activeItem.setCursor("/cursors/reticle0.cursor")
     self.config = config.getParameter("musicGun")
     npcDancer.dancePools = self.config.dancePools or {}
     self.beattimer = os.clock()
@@ -92,9 +93,7 @@ function main:update(dt, firemode, shift)
     else
         camera.target = {0,0}
     end
-
-    world.debugText("beattimer = %s", (self.beattimer1) - osclocked, vec2.add(mcontroller.position(), {0,1}), "#ff0")
-    world.debugText("timer1 = %s", self.timer1, vec2.add(mcontroller.position(), {0,2}), "#ff0")
+    
     self:updateAim()
 end
 

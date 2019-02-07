@@ -1,0 +1,12 @@
+{
+	"input" : [
+		{ "item" : "violin", "count" : 1 },
+		{ "item" : "squarewave", "count" : 1 },
+		{ "item" : "spaceorgan", "count" : 1 },
+		{ "item" : "drumkit", "count" : 1 },
+		{ "item" : "titaniumbar", "count" : 4 },
+		{ "item" : "battery", "count" : 1 }
+	],
+	"output" : ["dubstepgunstandard"],
+	"groups" : ["craftingaccelerator", "weapons", "all"]
+}

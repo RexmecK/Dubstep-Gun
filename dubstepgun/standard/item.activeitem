@@ -44,10 +44,10 @@
 			"knob3" : "sprites/sprite_12.png"
 		},
 		"sounds" : {
-			"prefire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["prefire.wav"]},
-			"loopfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["loopfire.wav"]},
-			"endfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["endfire.wav"]},
-			"idle"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["idle.wav"]}
+			"prefire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["prefire.ogg"]},
+			"loopfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["loopfire.ogg"]},
+			"endfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["endfire.ogg"]},
+			"idle"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["idle.ogg"]}
 		}
 	}
 }
