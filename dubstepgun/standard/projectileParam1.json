@@ -2,7 +2,7 @@
     "processing" : "?setcolor=fff",
     "speed": 200,
     "timeToLive" : 0.4,
-    "power": 100,
+    "power": 1000,
     "damageType" : "IgnoresDef",
     "periodicActions" : [
         {

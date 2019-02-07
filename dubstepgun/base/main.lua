@@ -24,10 +24,13 @@ function main:init()
     animator.playSound("idle", -1)
 end
 
+function main:lateInit()
+    animation:play("draw")
+end
 
 function main:update(dt, firemode, shift)
     local osclocked = os.clock() 
-    if firemode == "primary" then
+    if firemode == "primary" and not animation:isPlaying("draw") then
 
         if self.state == "idle" then
             animator.stopAllSounds("idle")
