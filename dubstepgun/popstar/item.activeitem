@@ -1,0 +1,53 @@
+{
+	"itemName" : "dubstepgunpopstar",
+	"shortdescription"	: "Dubstep Gun PopStar",
+	"description"		: "Bass cannon",
+	"tooltipKind"		: "base",
+	"category"			: "Special Weapons",
+	"inventoryIcon"		: "sprites/sprite_13.png",
+	"scripts"		: ["/dubstepgun/base/scripts/core.lua"],
+	"animationScripts"		: ["/dubstepgun/base/fx/main.lua"],
+	"scriptClass" 		: "/dubstepgun/base/loadModules.config",
+	"scriptDelta"		: 1,
+	
+	//item settings
+	"rarity" : "common",
+	"maxStack" : 1,
+	"price" : 0,
+	"twoHanded" : true,
+	
+	"musicGun" : {
+		"muzzle" : {"part" : "speaker", "s" : "muzzle", "e" : "muzzle_e"},
+		"bpm" : 220,
+		"preFireTime" : 2.182,
+		"loopTime" : 17.455,
+		"dancePools" : ["armswingdance", "wiggledance", "dabdubstep"]
+	},
+
+	"animationsKeyFrames" : "/dubstepgun/base/animation.keyframes",
+	"animation" : "/dubstepgun/base/base.animation",
+	"animationCustom" : {
+		"globalTagDefaults" : {
+			"speaker" : "sprites/sprite_00.png",
+			"gun" : "sprites/sprite_01.png",
+			"gunfullbright" : "sprites/sprite_01f.png",
+			"eq1" : "sprites/sprite_02.png",
+			"eq2" : "sprites/sprite_03.png",
+			"eq3" : "sprites/sprite_04.png",
+			"eq4" : "sprites/sprite_05.png",
+			"eq5" : "sprites/sprite_06.png",
+			"eq6" : "sprites/sprite_07.png",
+			"eq7" : "sprites/sprite_08.png",
+			"vu" : "sprites/sprite_09.png",
+			"knob1" : "sprites/sprite_10.png",
+			"knob2" : "sprites/sprite_11.png",
+			"knob3" : "sprites/sprite_12.png"
+		},
+		"sounds" : {
+			"prefire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["prefire.ogg"]},
+			"loopfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["loopfire.ogg"]},
+			"endfire"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["endfire.ogg"]},
+			"idle"	: {"pitchMultiplier" : 1,"volume" : 1, "pool" : ["idle.ogg"]}
+		}
+	}
+}
