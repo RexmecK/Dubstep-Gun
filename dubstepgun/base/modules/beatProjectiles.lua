@@ -1,6 +1,11 @@
 beatProjectiles = {
     trails = {},
-    projectiles = {}
+    projectiles = {},
+    colors = {
+        primary = {160,126,255,255},
+        secondary = {0,128,255,255},
+        white = {255,255,255,255}
+    }
 }
 
 function direction(dir)
@@ -38,17 +43,18 @@ function beatProjectiles:update(dt)
             local dir = direction(dist[1])
             local projectileAngle = vec2.angle(dist)
             local entpos2 = vec2.add(entpos, vec2.rotate( {0,( math.max(math.sin(v.time * math.pi * 3)^10, 0) * 4 + 0.25) * dir}, projectileAngle) )
-            table.insert(todraw, {position = v.lastline[1], line = {{0,0}, vec2.sub(v.lastline[2], v.lastline[1])}, width = 2, color = {0,128,255,255}, fullbright = true})
-            table.insert(todraw, {position = v.lastline[2], line = {{0,0}, vec2.sub(entpos2, v.lastline[2])}, width = 3, color = {255,255,255,255}, fullbright = true})
+
+            table.insert(todraw, {position = v.lastline[1], line = {{0,0}, vec2.sub(v.lastline[2], v.lastline[1])}, width = 2, color = self.colors.secondary, fullbright = true})
+            table.insert(todraw, {position = v.lastline[2], line = {{0,0}, vec2.sub(entpos2, v.lastline[2])}, width = 3, color = self.colors.white, fullbright = true})
 
             local entpos2b = vec2.add(entpos, vec2.rotate( {0,( -math.max(math.sin(v.time * math.pi * 3)^10, 0) * 4 - 0.25 ) * dir}, projectileAngle) )
             
-            table.insert(todraw, {position = v.lastlineb[1], line = {{0,0}, vec2.sub(v.lastlineb[2], v.lastlineb[1])}, width = 2, color = {0,128,255,255}, fullbright = true})
-            table.insert(todraw, {position = v.lastlineb[2], line = {{0,0}, vec2.sub(entpos2b, v.lastlineb[2])}, width = 3, color = {255,255,255,255}, fullbright = true})
+            table.insert(todraw, {position = v.lastlineb[1], line = {{0,0}, vec2.sub(v.lastlineb[2], v.lastlineb[1])}, width = 2, color = self.colors.secondary, fullbright = true})
+            table.insert(todraw, {position = v.lastlineb[2], line = {{0,0}, vec2.sub(entpos2b, v.lastlineb[2])}, width = 3, color = self.colors.white, fullbright = true})
 
-            self:linetrail(v.lastlineb, 0.1, {160,126,255,255})
-            self:linetrail(v.lastline, 0.1, {160,126,255,255})
-            self:linetrail({v.lastpos, entpos}, 0.1, {160,126,255,255})
+            self:linetrail(v.lastlineb, 0.1, self.colors.primary)
+            self:linetrail(v.lastline, 0.1, self.colors.primary)
+            self:linetrail({v.lastpos, entpos}, 0.1, self.colors.primary)
             self.projectiles[i] = {time = v.time + dt, lastline = {v.lastline[2], entpos2},lastlineb = {v.lastlineb[2], entpos2b}, lastpos = entpos}
         end
     end

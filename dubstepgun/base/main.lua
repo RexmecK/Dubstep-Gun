@@ -14,6 +14,18 @@ end
 function main:init()
     activeItem.setCursor("/cursors/reticle0.cursor")
     self.config = config.getParameter("musicGun")
+    if self.config.colors then
+        if self.config.colors.primary then
+            beatProjectiles.colors.primary = self.config.colors.primary
+        end
+        if self.config.colors.secondary then
+            beatProjectiles.colors.secondary = self.config.colors.secondary
+        end
+        if self.config.colors.white then
+            beatProjectiles.colors.white = self.config.colors.white
+        end
+    end
+
     npcDancer.dancePools = self.config.dancePools or {}
     self.beattimer = os.clock()
     camera.smooth = 8
